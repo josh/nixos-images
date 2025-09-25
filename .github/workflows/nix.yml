@@ -23,3 +23,7 @@ jobs:
       - name: Check flake
         run: |
           nix flake check --keep-going --print-build-logs github:${{ github.repository }}/${{ github.sha }}
+
+      - name: Build ISOs
+        run: |
+          nix build --keep-going --print-build-logs github:${{ github.repository }}/${{ github.sha }}#all-isos
