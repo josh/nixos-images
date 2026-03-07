@@ -15,7 +15,7 @@
         '';
       };
 
-      nixosModules.installer = ./installer.nix;
+      nixosModules.installer = import ./installer.nix;
 
       nixosConfigurations.nixos-installer = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
