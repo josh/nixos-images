@@ -22,6 +22,7 @@
 
   boot.kernelParams = [ "console=ttyS0" ];
   boot.loader.timeout = lib.modules.mkForce 1;
+  boot.zfs.forceImportRoot = false;
 
   networking.firewall.enable = false;
   networking.useNetworkd = true;
