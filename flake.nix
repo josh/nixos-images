@@ -8,11 +8,6 @@
     {
       packages.x86_64-linux = {
         nixos-installer-iso = self.nixosConfigurations.nixos-installer.config.system.build.isoImage;
-
-        all-isos = nixpkgs.legacyPackages.x86_64-linux.runCommand "all-isos" { } ''
-          mkdir $out
-          ln -s ${self.packages.x86_64-linux.nixos-installer-iso}/iso/*.iso $out/
-        '';
       };
 
       nixosModules.installer = import ./installer.nix;
